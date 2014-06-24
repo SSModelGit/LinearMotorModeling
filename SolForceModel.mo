@@ -10,6 +10,7 @@ model SolForceModel
   parameter Real timerS[4] = {0,1,1.54,1.98};
   Real FSol[3];
   Real frictionF;
+  Real solPullF;
   Real x;
   Real v;
   Real a;
@@ -22,6 +23,10 @@ equation
   when time > timerS[i] and time < timerS[i + 1] then
     F[i] = N ^ 2 * A * mu * V ^ 2 / R ^ 2 * PWM ^ 2 * (solP[i] - x) / (h ^ 2 + (solP[i] - x) ^ 2) ^ (3 / 2);
   end when;
+
+  end for;
+  for i in 1:size({1,2,3}, 1) loop
+  solPullF = FSol[i] * (solP[i] - x) / sqrt(x);
 
   end for;
   v = der(x);
