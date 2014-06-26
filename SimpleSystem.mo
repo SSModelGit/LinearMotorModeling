@@ -10,7 +10,7 @@ equation
 end SimpleSystem;
 
 connector car
-  meter x;
+  input x;
   flow Newton F;
 end car
 
