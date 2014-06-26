@@ -8,3 +8,11 @@ equation
   connect(f1.f, c.f) "Tell car what force is being applied";
   connect(t1.command, f1.command) "Tell solenoid f1 when to turn on";
 end SimpleSystem;
+
+connector car
+  meter x;
+  flow Newton F;
+end car
+
+connector JustForce
+  
