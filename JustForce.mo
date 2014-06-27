@@ -1,4 +1,4 @@
-model JustForce "Model of just solenoid force (no control)"
+block JustForce "Model of just solenoid force (no control)"
   parameter Real N = 1 "Add a description of what this is";
   parameter Real A = 1 "Add a description of what this is";
   parameter Real mu = 1 "Add a description of what this is";
