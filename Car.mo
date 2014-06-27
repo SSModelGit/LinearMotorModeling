@@ -7,10 +7,10 @@ model Car
   Real v "Velocity of the car";
   Real a "Acceleration of the car";
 initial equation
-  x=x0;
-  v=v0;
+  x = x0;
+  v = v0;
 equation
   v = der(x);
   a = der(v);
-  F=m*a;
+  F = m * a;
 end Car;
