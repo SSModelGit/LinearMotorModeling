@@ -1,18 +1,27 @@
 model SimpleSystem
-  Car c;
-  JustForce f1(N=1);
+  Car c(x0=0, v0=0, m=10);
+  JustForce f1(N=1, A=1, mu=1, V=1, R=1, PWM=1, Px=1, h=1);
   TimedController t1(onTime=0.5, offTime=1.0);
 equation
   connect(c.x, f1.x) "Tell solenoid f1 what the car's position is";
-  connect(c.x, t1.x) "Tell controller t1 what the car's position is";
-  connect(f1.f, c.f) "Tell car what force is being applied";
   connect(t1.command, f1.command) "Tell solenoid f1 when to turn on";
+  connect(f1.f, c.f) "Tell car what force is being applied";
+  t1.t = time;
 end SimpleSystem;
 
-connector car
-  input x;
-  flow Newton F;
-end car
-
-connector JustForce
-  
+model Car
+  parameter Real m "Mass of the car";
+  parameter Real x0 "Starting position of the car";
+  parameter Real v0 "Starting velocity of the car";
+  output Real x "Position of the car";
+  input Real F "Force of the car";
+  Real v "Velocity of the car";
+  Real a "Acceleration of the car";
+initial equation
+  x=x0;
+  v=v0;
+equation
+  v = der(x);
+  a = der(v);
+  F=m*a;
+end Car;
