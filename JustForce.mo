@@ -1,14 +1,14 @@
-model JustForce "Model of just solenoid force (no control)"
-  parameter Real N = 1 "Add a description of what this is";
-  parameter Real A = 1 "Add a description of what this is";
-  parameter Real mu = 1 "Add a description of what this is";
-  parameter Real V = 1 "Add a description of what this is";
-  parameter Real R = 1 "Add a description of what this is";
-  parameter Real PWM = 1 "Add a description of what this is";
-  parameter Real Px = 1 "Position of solenoid?!?";
-  parameter Real h = 1 "Add a description of what this is";
+block JustForce "Model of just solenoid force (no control)"
+  parameter Real N = 1 "Property of the solenoid design";
+  parameter Real A = 1 "Property of the solenoid design";
+  parameter Real mu = 1 "Property of the solenoid design";
+  parameter Real V = 1 "Voltage across solenoid";
+  parameter Real R = 1 "Resistance of solenoid";
+  parameter Real PWM = 1 "Pulse Width Modulation of voltage across solenoid";
+  parameter Real Px = 1 "Position of solenoid";
+  parameter Real h = 1 "Vertical air gap between car and solenoid";
   output Real F "Solenoid force";
-  input Real x;
+  input Real x "Position of car";
   input Boolean command "True if the solenoid is on, otherwise false";
 equation
   if command then
