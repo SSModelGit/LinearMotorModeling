@@ -1,4 +1,4 @@
-within XogenyModels.Tests;
+within XogenyModels.Tests.CompTests.SolSysCompTests;
 model TestCar
   //import XogenyModels.Components.SolenoidSystemComponents;
   SolenoidSystemComponents.Car c(m = 1, x0 = 0, v0 = 0);
