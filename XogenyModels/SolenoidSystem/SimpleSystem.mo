@@ -1,3 +1,4 @@
+within XogenyModels.SolenoidSystem;
 model SimpleSystem
   Car c(x0 = 0, v0 = 0, m = 10);
   JustForce f1(N = 1, A = 1, mu = 1, V = 1, R = 1, PWM = 1, Px = 1, h = 1);
