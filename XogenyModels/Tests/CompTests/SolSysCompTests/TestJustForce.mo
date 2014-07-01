@@ -1,6 +1,6 @@
 within XogenyModels.Tests.CompTests.SolSysCompTests;
 model TestJustForce
-  SolenoidSystemComponents.JustForce f1(N = 1, A = 1, mu = 1, V = 1, R = 1, PWM = 1, Px = 1, h = 1);
+  SolenoidSystemComponents.JustForce f1(N = 1, A = 1, mu = 1, V = 1, R = 1, PWM = 1, Px = 2, h = 1);
   Real force;
   Boolean com;
 initial equation
