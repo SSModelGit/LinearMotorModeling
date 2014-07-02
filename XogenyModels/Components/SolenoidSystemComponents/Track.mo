@@ -8,6 +8,7 @@ model Track
   output Real Weightx "Weight acting along track";
   output Real fTrack "Frictional force from track surface";
   input Real Totalf "Force from solenoid";
+  input Real v "Velocity of cart";
   Real angle "Calculated value of the angle of the incline";
 equation
   angle = Math.atan(h / l);

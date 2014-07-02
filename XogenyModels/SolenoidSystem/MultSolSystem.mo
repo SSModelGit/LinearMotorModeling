@@ -16,5 +16,7 @@ equation
   connect(c.x,s2.carX);
   connect(c.x,s3.carX);
   c.F = TotalF;
+  connect(c.F,channel.Totalf);
+  connect(c.v,channel.v);
   annotation(Icon(coordinateSystem(extent = {{-100,-100},{100,100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2,2})), Diagram(coordinateSystem(extent = {{-100,-100},{100,100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2,2})), experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-006, Interval = 0.02));
 end MultSolSystem;
