@@ -10,13 +10,13 @@ model Track
   input Real Totalf "Force from solenoid";
   input Real v "Velocity of cart";
   Real angle "Calculated value of the angle of the incline";
-equation
-  angle = Math.atan(h / l);
+equation 
+  angle=Math.atan(h/l);
   if Totalf - 0 < 0.001 and v - 0 < 0.001 then
-    fTrack = -Weightx;
+    fTrack=-Weightx;
   else
-    fTrack = -mu * CartMass * gLocal * Math.cos(angle);
+    fTrack=-mu*CartMass*gLocal*Math.cos(angle);
   end if;
-  Weightx = CartMass * gLocal * Math.sin(angle);
-  annotation(Icon(coordinateSystem(extent = {{-100,-100},{100,100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2,2})), Diagram(coordinateSystem(extent = {{-100,-100},{100,100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2,2})));
+  Weightx=CartMass*gLocal*Math.sin(angle);
+  annotation(Icon(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=true, initialScale=0.1, grid={2,2})), Diagram(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=true, initialScale=0.1, grid={2,2})));
 end Track;
