@@ -1,10 +1,18 @@
 within XogenyModels.Components.SolenoidSystemComponents;
 model SolFWConnector "Model of just solenoid force (no control)"
-  SolenoidSystemComponents.ElMag sol(N=1, A=1, mu=1, V=12.8, R=2, PWM=1, Px=2.0, h=1);
+  SolenoidSystemComponents.CarF sol;
+  parameter Real N "Property of the solenoid design";
+  parameter Real A "Property of the solenoid design";
+  parameter Real mu "Property of the solenoid design";
+  parameter Real V "Voltage across solenoid";
+  parameter Real R "Resistance of solenoid";
+  parameter Real PWM "Pulse Width Modulation of voltage across solenoid";
+  parameter Real Px "Position of solenoid";
+  parameter Real h "Vertical air gap between car and solenoid";
   input Boolean command "True if the solenoid is on, otherwise false";
 equation 
   if command then
-    sol.F=sol.N^2*sol.A*sol.mu*sol.V^2/sol.R^2*sol.PWM^2*(sol.Px - sol.x)/(sol.h^2 + (sol.Px - sol.x)^2)^(3/2);
+    sol.F=-N^2*A*mu*V^2/R^2*PWM^2*(Px - sol.x)/(h^2 + (Px - sol.x)^2)^(3/2);
   else
     sol.F=0;
   end if;
