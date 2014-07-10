@@ -8,7 +8,7 @@ model SimSysWC
   SolenoidSystemComponents.TimedController t1(onTime=1.0, offTime=1.59);
   SolenoidSystemComponents.TimedController t2(onTime=1.59, offTime=1.83);
   SolenoidSystemComponents.TimedController t3(onTime=1.83, offTime=1.99);
-  SolenoidSystemComponents.TrackWC channel(m=0.75, l=4, h=0.3, mu=0.2, g=9.81, fTol=0.005);
+  SolenoidSystemComponents.TrackWC channel(m=0.75, l=4, h=0.6, mu=0.2, g=9.81, fTol=0.005);
 equation 
   connect(c.c,sol1.sol) "Relay position from car to solenoid, sum up all forces automatically";
   connect(c.c,sol2.sol) "Relay position from car to solenoid, sum up all forces automatically";
