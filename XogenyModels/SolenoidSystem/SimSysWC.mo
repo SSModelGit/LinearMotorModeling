@@ -1,7 +1,7 @@
 within XogenyModels.SolenoidSystem;
 model SimSysWC
   import XogenyModels.Components.SolenoidSystemComponents;
-  SolenoidSystemComponents.CarWC c(x0=0, m=0.75);
+  SolenoidSystemComponents.CarWithConnector c(x0=0, m=0.75);
   SolenoidSystemComponents.SolFWConnector sol1(N=1, A=1, mu=1, V=12.8, R=2, PWM=1, Px=2.0, h=1);
   SolenoidSystemComponents.SolFWConnector sol2(N=1, A=1, mu=1, V=12.8, R=2, PWM=1, Px=4.0, h=1);
   SolenoidSystemComponents.SolFWConnector sol3(N=1, A=1, mu=1, V=12.8, R=2, PWM=1, Px=6.0, h=1);
