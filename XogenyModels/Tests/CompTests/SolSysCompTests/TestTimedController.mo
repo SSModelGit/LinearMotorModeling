@@ -4,6 +4,9 @@ model TestTimedController
   Boolean com;
 equation 
   time=t1.t;
+  when time >= 1.5 then
+    assert(com == true, "Command is not turned on");
+  end when;
   com=t1.command;
   annotation(Icon(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=true, initialScale=0.1, grid={2,2})), Diagram(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=true, initialScale=0.1, grid={2,2})));
 end TestTimedController;
