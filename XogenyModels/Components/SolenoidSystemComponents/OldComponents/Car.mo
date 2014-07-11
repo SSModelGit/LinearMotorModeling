@@ -1,4 +1,4 @@
-within XogenyModels.Components.SolenoidSystemComponents;
+within XogenyModels.Components.SolenoidSystemComponents.OldComponents;
 model Car
   parameter Real m "Mass of the car";
   parameter Real x0 "Starting position of the car";

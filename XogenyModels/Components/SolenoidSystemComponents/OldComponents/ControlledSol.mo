@@ -1,4 +1,4 @@
-within XogenyModels.Components.SolenoidSystemComponents;
+within XogenyModels.Components.SolenoidSystemComponents.OldComponents;
 model ControlledSol
   SolenoidSystemComponents.JustForce solF(N=N1, A=A1, mu=mu1, V=V1, R=R1, PWM=PWM1, Px=Px1, h=h1);
   SolenoidSystemComponents.TimedController solControl(onTime=onTime1, offTime=offTime1);

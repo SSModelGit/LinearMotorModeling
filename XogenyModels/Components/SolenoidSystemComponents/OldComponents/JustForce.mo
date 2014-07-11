@@ -1,4 +1,4 @@
-within XogenyModels.Components.SolenoidSystemComponents;
+within XogenyModels.Components.SolenoidSystemComponents.OldComponents;
 block JustForce "Model of just solenoid force (no control)"
   parameter Real N "Property of the solenoid design";
   parameter Real A "Property of the solenoid design";

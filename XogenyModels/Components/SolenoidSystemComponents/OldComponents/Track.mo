@@ -1,4 +1,4 @@
-within XogenyModels.Components.SolenoidSystemComponents;
+within XogenyModels.Components.SolenoidSystemComponents.OldComponents;
 model Track
   parameter Real CartMass "Mass of the cart";
   parameter Real l "Length of the cart";

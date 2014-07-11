@@ -1,4 +1,4 @@
-within XogenyModels.Components.SolenoidSystemComponents;
+within XogenyModels.Components.SolenoidSystemComponents.OldComponents;
 model CarWf "Car with friction"
   parameter Real alpha "frictional coefficient related to velocity";
   parameter Real beta "frictional coeffictient related to velocity squared";
