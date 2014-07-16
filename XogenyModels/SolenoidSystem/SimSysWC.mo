@@ -1,5 +1,5 @@
 within XogenyModels.SolenoidSystem;
-model SimSysWC
+model SimSysWC "Simple System Model expanded to multiple solenoids, using connectors"
   import XogenyModels.Components.SolenoidSystemComponents;
   SolenoidSystemComponents.CarWithConnector c(x0=0, m=0.75);
   SolenoidSystemComponents.SolFWConnector sol1(N=1, A=1, mu=1, V=12.8, R=2, PWM=1, Px=2.0, h=1);

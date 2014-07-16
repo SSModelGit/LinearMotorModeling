@@ -1,10 +1,9 @@
 within XogenyModels.Components.SolenoidSystemComponents;
 model SolFWConnector "Model of just solenoid force (no control)"
   Interfaces.Flange_a sol;
-  type MagneticPermeability= Real(unit="N/A2");
   parameter Real N "Property of the solenoid design";
   parameter SIunits.Area A "Property of the solenoid design";
-  parameter MagneticPermeability mu "Property of the solenoid design";
+  parameter SIunits.Permeability mu "Property of the solenoid design";
   parameter SIunits.Voltage V "Voltage across solenoid";
   parameter SIunits.Resistance R "Resistance of solenoid";
   parameter Real PWM "Pulse Width Modulation of voltage across solenoid";
