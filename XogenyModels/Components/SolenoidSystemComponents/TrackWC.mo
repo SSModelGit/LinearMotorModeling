@@ -13,8 +13,10 @@ model TrackWC
   input SIunits.Velocity v "Velocity of cart";
   input SIunits.Time t "Time";
   SIunits.Angle angle "Calculated value of the angle of the incline";
+  Real tanAngle;
 equation 
-  angle=Math.atan(h/l);
+  tanAngle=h/l;
+  angle=Math.atan(tanAngle);
   N=m*g*Math.cos(angle);
   if v < -fTol then
     Ff=mu*N;

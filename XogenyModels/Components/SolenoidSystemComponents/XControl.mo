@@ -1,12 +1,8 @@
 within XogenyModels.Components.SolenoidSystemComponents;
 model XControl "Controller that is based on position x"
+  MagProperties mag(N, A, chi, mu, h);
   parameter SIunits.Distance startx "position at when the solenoid turns on";
   parameter SIunits.Distance endx "position at when the solenoid turns off";
-  parameter Real N "Number of turns on solenoid";
-  parameter SIunits.Area A "Area of cross section of solenoid";
-  parameter SIunits.Current chi "Property of magnet";
-  parameter SIunits.Permeability mu "Property of surroundings between magnet and solenoid";
-  parameter SIunits.Distance h "Vertical distance between magnet and solenoid";
   SIunits.Position x "position of cart";
   SIunits.Velocity v "velocity of the cart";
   Boolean notFinished;
@@ -17,9 +13,11 @@ initial equation
   command=false;
 equation 
   v=der(x);
-  V=-N*A*chi*mu*(x*v/(x^2 + h^2)^(3/2));
+  V=-mag.N*mag.A*mag.chi*mag.mu*(x*v/(x^2 + mag.h^2)^(3/2));
   if notFinished then
     command=x >= startx and x <= endx;
+  else
+    command=false;
   end if;
   when abs(x - endx) < 0.001 then
     notFinished=false;
