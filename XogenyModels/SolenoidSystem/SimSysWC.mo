@@ -18,9 +18,6 @@ equation
   x1.command=sol1.command "Tell solenoid when to turn on";
   x2.command=sol2.command "Tell solenoid when to turn on";
   x3.command=sol3.command "Tell solenoid when to turn on";
-  connect(x1.mag,sensor.mag);
-  connect(x2.mag,sensor.mag);
-  connect(x3.mag,sensor.mag);
   x1.V=sensor.V;
   x2.V=sensor.V;
   x3.V=sensor.V;
