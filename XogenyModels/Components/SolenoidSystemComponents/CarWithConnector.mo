@@ -1,6 +1,6 @@
 within XogenyModels.Components.SolenoidSystemComponents;
 model CarWithConnector
-  Interfaces.Flange_a c;
+  Modelica.Mechanics.Translational.Interfaces.Flange_a c;
   parameter SIunits.Mass m "Mass of the car";
   parameter SIunits.Position x0 "Starting position of the car";
   SIunits.Velocity v "Velocity of the car";
