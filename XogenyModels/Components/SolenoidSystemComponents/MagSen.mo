@@ -17,13 +17,10 @@ initial equation
 equation 
   der(CartMag.f)=0;
   V=-mag.N*mag.A*mag.chi*mag.mu*((CartMag.s - Px)*der(CartMag.s)/((CartMag.s - Px)^2 + mag.h^2)^(3/2));
-  if notFinished then
+  when notFinished then
     command=true;
     Started=true;
-  else
-    command=false;
-    throwaway=0;
-  end if;
+  end when;
   when abs(V - threshold) < 0.001 then
     if Started == true then
       notFinished=false;
