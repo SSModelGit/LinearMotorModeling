@@ -1,8 +1,7 @@
 within XogenyModels.Components.SolenoidSystemComponents;
 model XControl "Controller that is based on position x"
   MagProperties mag(N=1, A=1, chi=1, mu=1, h=1);
-  parameter SIunits.Distance startx "position at when the solenoid turns on";
-  parameter SIunits.Distance endx "position at when the solenoid turns off";
+  parameter SIunits.Voltage threshold "Threshold voltage to determine wanted proximity";
   SIunits.Position x "position of cart";
   SIunits.Velocity v "velocity of the cart";
   Boolean notFinished;
