@@ -1,5 +1,5 @@
 within XogenyModels.Components.SolenoidSystemComponents;
-connector MagProperties
+record MagProperties
   parameter Real N "Number of turns on solenoid";
   parameter SIunits.Area A "Area of cross section of solenoid";
   parameter SIunits.Current chi "Property of magnet";

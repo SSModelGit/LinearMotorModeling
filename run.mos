@@ -1,0 +1,7 @@
+setModelicaPath(getModelicaPath()+":"+"/Users/mtiller/Source/Xogeny-Models");
+loadModel(Modelica);
+loadModel(XogenyModels);
+getErrorString();
+
+simulate(XogenyModels.SolenoidSystem.SimSysWC, stopTime=10, tolerance=0.001, numberOfIntervals=500, method="dassl", fileNamePrefix="SimSysWC", outputFormat="csv");
+getErrorString();
