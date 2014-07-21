@@ -16,5 +16,5 @@ equation
   else
     sol.f=0;
   end if;
-  annotation(Icon(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=true, initialScale=0.1, grid={2,2})), Diagram(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=true, initialScale=0.1, grid={2,2})));
+  annotation(Icon(graphics={Ellipse(extent={{-50,50},{50,-50}}, lineColor={0,0,255}, fillColor={0,0,0}, fillPattern=FillPattern.Solid),Rectangle(extent={{-50,50},{50,-50}}, fillColor={0,128,255}, fillPattern=FillPattern.Solid, pattern=LinePattern.None)}));
 end SolFWConnector;
