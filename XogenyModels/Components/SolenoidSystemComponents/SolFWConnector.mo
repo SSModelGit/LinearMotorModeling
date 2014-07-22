@@ -1,6 +1,5 @@
 within XogenyModels.Components.SolenoidSystemComponents;
 model SolFWConnector "Model of just solenoid force (no control)"
-  Interfaces.Flange_a sol;
   parameter Real N "Property of the solenoid design";
   parameter SIunits.Area A "Property of the solenoid design";
   parameter SIunits.Permeability mu "Property of the solenoid design";
@@ -10,6 +9,7 @@ model SolFWConnector "Model of just solenoid force (no control)"
   parameter SIunits.Position Px "Position of solenoid";
   parameter SIunits.Distance h "Vertical air gap between car and solenoid";
   input Boolean command "True if the solenoid is on, otherwise false";
+  Modelica.Mechanics.Translational.Interfaces.Flange_a sol annotation(Placement(visible=true, transformation(origin={0,0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0), iconTransformation(origin={-0.0,2.8147}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0)));
 equation 
   if command then
     sol.f=-N^2*A*mu*V^2/R^2*PWM^2*(Px - sol.s)/(h^2 + (Px - sol.s)^2)^(3/2);

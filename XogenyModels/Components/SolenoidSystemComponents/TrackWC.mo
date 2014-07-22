@@ -1,6 +1,5 @@
 within XogenyModels.Components.SolenoidSystemComponents;
 model TrackWC
-  Interfaces.Flange_a Cf;
   parameter SIunits.Mass m "Mass of the cart";
   parameter SIunits.Length l "Length of the cart";
   parameter SIunits.Length h "Height of cart from ground";
@@ -14,6 +13,7 @@ model TrackWC
   input SIunits.Time t "Time";
   SIunits.Angle angle "Calculated value of the angle of the incline";
   Real tanAngle;
+  Modelica.Mechanics.Translational.Interfaces.Flange_a Cf annotation(Placement(visible=true, transformation(origin={0.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0), iconTransformation(origin={0.0,-0.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0)));
 equation 
   tanAngle=h/l;
   angle=Math.atan(tanAngle);
@@ -27,5 +27,5 @@ equation
   end if;
   W=m*g*Math.sin(angle);
   Cf.f=-(W + Ff);
-  annotation(Icon(graphics={Rectangle(extent={{-50,45},{-45,55}}, fillColor={100,100,100}, fillPattern=FillPattern.Solid, pattern=LinePattern.None, lineColor={0,0,0}),Rectangle(extent={{-100,-30},{100,30}}, fillColor={0,0,0}, fillPattern=FillPattern.Solid, pattern=LinePattern.None, lineColor={0,0,0}),Rectangle(extent={{-75,30},{-50,70}}, fillColor={0,128,255}, fillPattern=FillPattern.Solid, pattern=LinePattern.None, lineColor={0,0,0}),Ellipse(extent={{-20,-20},{20,20}}, lineColor={255,0,0}, fillColor={0,0,0}, fillPattern=FillPattern.None),Ellipse(extent={{-15,-15},{15,15}}, lineColor={255,0,0}, fillColor={0,0,0}, fillPattern=FillPattern.None),Ellipse(extent={{-10,-10},{10,10}}, lineColor={255,0,0}, fillColor={0,0,0}, fillPattern=FillPattern.None),Text(extent={{-100,-100},{100,-140}}, lineColor={0,0,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid, textString="%name")}));
+  annotation(Icon(graphics={Rectangle(visible=true, pattern=LinePattern.None, fillPattern=FillPattern.Solid, extent={{-100.0,-30.0},{100.0,30.0}}),Ellipse(visible=true, lineColor={255,0,0}, extent={{-20.0,-20.0},{20.0,20.0}}),Ellipse(visible=true, lineColor={255,0,0}, extent={{-15.0,-15.0},{15.0,15.0}}),Ellipse(visible=true, lineColor={255,0,0}, extent={{-10.0,-10.0},{10.0,10.0}}),Text(visible=true, lineColor={0,0,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid, extent={{-100.0,-140.0},{100.0,-100.0}}, textString="%name", fontName="Arial")}, coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
 end TrackWC;
