@@ -1,6 +1,6 @@
 within XogenyModels.Tests.CompTests.SolSysCompTests;
 model TestTimedController
-  SolenoidSystemComponents.TimedController t1(onTime=1.0, offTime=2.0);
+  SolenoidSystemComponents.OldComponents.TimedController t1(onTime=1.0, offTime=2.0);
   Boolean com;
 equation 
   time=t1.t;
