@@ -9,8 +9,7 @@ model TrackWC
   SIunits.Force N "Normal force from track";
   SIunits.Force W "Weight acting along track";
   SIunits.Force Ff "Frictional force from track surface";
-  input SIunits.Velocity v "Velocity of cart";
-  input SIunits.Time t "Time";
+  Modelica.Blocks.Interfaces.RealInput v annotation(Placement(visible=true, transformation(origin={-22.225,-0.5292}, extent={{-20.0,-20.0},{20.0,20.0}}, rotation=0), iconTransformation(origin={-30.0,0.0}, extent={{-20.0,-20.0},{20.0,20.0}}, rotation=0)));
   SIunits.Angle angle "Calculated value of the angle of the incline";
   Real tanAngle;
   Modelica.Mechanics.Translational.Interfaces.Flange_a Cf annotation(Placement(visible=true, transformation(origin={0.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0), iconTransformation(origin={0.0,-0.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0)));

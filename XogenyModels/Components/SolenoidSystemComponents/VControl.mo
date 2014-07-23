@@ -3,8 +3,8 @@ model VControl "Controller that is based on position x"
   parameter SIunits.Voltage threshold "Threshold voltage to determine wanted proximity";
   Boolean notFinished;
   Boolean Started;
-  output Boolean command;
-  input SIunits.Voltage V "Voltage of the sensor";
+  Modelica.Blocks.Interfaces.BooleanOutput command annotation(Placement(visible=true, transformation(origin={0,0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0), iconTransformation(origin={4.2333,2.1167}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0)));
+  Modelica.Blocks.Interfaces.RealInput V annotation(Placement(visible=true, transformation(origin={-20,0}, extent={{-20.0,-20.0},{20.0,20.0}}, rotation=0), iconTransformation(origin={-25.4,1.5875}, extent={{-20.0,-20.0},{20.0,20.0}}, rotation=0)));
 initial equation 
   notFinished=true;
   command=false;
