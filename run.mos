@@ -3,5 +3,5 @@ loadModel(Modelica);
 loadModel(XogenyModels);
 getErrorString();
 
-simulate(XogenyModels.SolenoidSystem.SimSysWC, stopTime=10, tolerance=0.001, numberOfIntervals=500, method="dassl", fileNamePrefix="SimSysWC", outputFormat="csv");
+simulate(XogenyModels.SolenoidSystem.SimSysTrial, stopTime=10, tolerance=0.001, numberOfIntervals=500, method="dassl", fileNamePrefix="SimSysTrial", outputFormat="csv");
 getErrorString();
