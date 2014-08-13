@@ -1,3 +1,4 @@
+within XogenyModels.Tests.CompTests.SolSysCompTests;
 model TestMagSen
   annotation(Diagram(coordinateSystem(extent={{-148.5,-105.0},{148.5,105.0}}, preserveAspectRatio=true, initialScale=0.1, grid={5,5})));
   XogenyModels.Components.SolenoidSystemComponents.MagSen magSen1(Px=2) annotation(Placement(visible=true, transformation(origin={-81.3227,-1.3227}, extent={{-53.6773,-53.6773},{53.6773,53.6773}}, rotation=0)));
