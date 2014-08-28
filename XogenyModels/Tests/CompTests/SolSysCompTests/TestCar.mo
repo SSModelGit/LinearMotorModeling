@@ -1,12 +1,9 @@
 within XogenyModels.Tests.CompTests.SolSysCompTests;
+
 model TestCar
-  SolenoidSystemComponents.OldComponents.Car c(m=1, x0=0, v0=0);
-  Real position;
-equation 
-  c.F=1;
-  position=c.x;
-  when time >= 2.0 then
-    assert(abs(position - 5.0) < 0.001, "Unexpected result for x");
-  end when;
-  annotation(Icon(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=true, initialScale=0.1, grid={2,2})), Diagram(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=true, initialScale=0.1, grid={2,2})));
+  SolenoidSystemComponents.CarWithConnector carWithConnector(m = 0.75, x0 = 0) annotation(Placement(visible = true, transformation(origin = {16.97, 16.97}, extent = {{-26.97, -26.97}, {26.97, 26.97}}, rotation = 0)));
+  Modelica.Mechanics.Translational.Interfaces.Flange_a flange_a annotation(Placement(visible = true, transformation(origin = {-65.20099999999999, 20}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {-65.20099999999999, 20}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+equation
+  connect(flange_a, carWithConnector.c) annotation(Line(visible = true, origin = {-18.451, 21.182}, points = {{-46.75, -1.182}, {5.451, -1.182}, {5.451, 1.182}, {35.849, 1.182}}, color = {0, 127, 0}));
+  flange_a.f = 1;
 end TestCar;
