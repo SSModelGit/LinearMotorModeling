@@ -1,4 +1,5 @@
 within XogenyModels.Components.SolenoidSystemComponents.OldComponents;
+
 model CarWf "Car with friction"
   parameter Real alpha "frictional coefficient related to velocity";
   parameter Real beta "frictional coeffictient related to velocity squared";
@@ -8,9 +9,9 @@ model CarWf "Car with friction"
   input Real F "Force of the car";
   Real v "Velocity of the car";
   Real a "Acceleration of the car";
-equation 
-  v=der(x);
-  a=der(v);
-  F=m*a;
-  annotation(Icon(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=true, initialScale=0.1, grid={2,2})), Diagram(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=true, initialScale=0.1, grid={2,2})));
+equation
+  v = der(x);
+  a = der(v);
+  F = m * a;
+  annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2, 2})), Diagram(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2, 2})));
 end CarWf;

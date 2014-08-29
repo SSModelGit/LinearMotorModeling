@@ -1,7 +1,8 @@
 within XogenyModels.Components.SolenoidSystemComponents.OldComponents;
+
 model ControlledSol
-  SolenoidSystemComponents.JustForce solF(N=N1, A=A1, mu=mu1, V=V1, R=R1, PWM=PWM1, Px=Px1, h=h1);
-  SolenoidSystemComponents.TimedController solControl(onTime=onTime1, offTime=offTime1);
+  SolenoidSystemComponents.JustForce solF(N = N1, A = A1, mu = mu1, V = V1, R = R1, PWM = PWM1, Px = Px1, h = h1);
+  SolenoidSystemComponents.TimedController solControl(onTime = onTime1, offTime = offTime1);
   parameter Real N1 "Property of the solenoid design";
   parameter Real A1 "Property of the solenoid design";
   parameter Real mu1 "Property of the solenoid design";
@@ -16,12 +17,12 @@ model ControlledSol
   output Real solForce;
   input Real carX;
   input Real t1;
-initial equation 
-  carX=x0;
-equation 
-  connect(solControl.command,solF.command);
-  carX=solF.x;
-  solControl.t=t1;
-  solForce=solF.F;
-  annotation(Icon(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=true, initialScale=0.1, grid={2,2})), Diagram(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=true, initialScale=0.1, grid={2,2})));
+initial equation
+  carX = x0;
+equation
+  connect(solControl.command, solF.command);
+  carX = solF.x;
+  solControl.t = t1;
+  solForce = solF.F;
+  annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2, 2})), Diagram(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2, 2})));
 end ControlledSol;
