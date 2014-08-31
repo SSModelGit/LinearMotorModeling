@@ -21,14 +21,10 @@ equation
   N = m * g * Math.cos(angle);
   if v < (-fTol) then
     Ff = mu * N;
-  elseif v > 0 then
+  elseif v > fTol then
     Ff = -mu * N;
   else
-    if abs(sumSolfF) < 1e-3 then
-      Ff = 0;
-    else
-      Ff = (-2 * mu * N) / fTol * v - mu * N;
-    end if;
+    Ff = (-1 * mu * N) / fTol * v;
   end if;
   W = m * g * Math.sin(angle);
   Cf.f = -(W + Ff);
