@@ -10,6 +10,7 @@ model TrackWC
   SIunits.Force N "Normal force from track";
   SIunits.Force W "Weight acting along track";
   SIunits.Force Ff "Frictional force from track surface";
+  SIunits.Force sumSolF "The sum of all the solenoid forces";
   Modelica.Blocks.Interfaces.RealInput v annotation(Placement(visible = true, transformation(origin = {-22.225, -0.5292}, extent = {{-20.0, -20.0}, {20.0, 20.0}}, rotation = 0), iconTransformation(origin = {-30.0, 0.0}, extent = {{-20.0, -20.0}, {20.0, 20.0}}, rotation = 0)));
   SIunits.Angle angle "Calculated value of the angle of the incline";
   Real tanAngle;
@@ -23,7 +24,11 @@ equation
   elseif v > 0 then
     Ff = -mu * N;
   else
-    Ff = (-2 * mu * N) / fTol * v - mu * N;
+    if abs(sumSolfF) < 1e-3 then
+      Ff = 0;
+    else
+      Ff = (-2 * mu * N) / fTol * v - mu * N;
+    end if;
   end if;
   W = m * g * Math.sin(angle);
   Cf.f = -(W + Ff);

@@ -28,5 +28,6 @@ equation
   connect(sensor3.CartMag, c.c) annotation(Line(visible = true, origin = {-22.4361, -9.3111}, points = {{60.0495, -35.7905}, {-15.0124, -35.6889}, {-15.0124, 14.3111}, {-15.0124, 14.3111}, {-15.0124, 42.8571}}, color = {0, 127, 0}));
   connect(sensor1.CartMag, c.c) annotation(Line(visible = true, origin = {-8.7035, 24.9809}, points = {{45.338, -8.565099999999999}, {-8.2965, -8.565099999999999}, {-8.2965, 8.565099999999999}, {-28.745, 8.565099999999999}}, color = {0, 127, 0}));
   connect(sensor2.CartMag, c.c) annotation(Line(visible = true, origin = {-9.0867, 55.1027}, points = {{44.1884, 21.5567}, {-7.9133, 21.5567}, {-7.9133, -21.5567}, {-28.3617, -21.5567}}, color = {0, 127, 0}));
+  channel.sumSolForce = sol1.sol.f + sol2.sol.f + sol3.sol.f;
   annotation(Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})));
 end SimSysTrial;
