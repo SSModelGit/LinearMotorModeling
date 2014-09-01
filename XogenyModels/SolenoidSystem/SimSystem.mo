@@ -1,8 +1,8 @@
 within XogenyModels.SolenoidSystem;
 
-model SimSysTrial "Tries to use the graphical connectors"
+model SimSystem "Tries to use the graphical connectors"
   import XogenyModels.Components.SolenoidSystemComponents;
-  XogenyModels.Components.SolenoidSystemComponents.CarWithConnector c(x0 = 1, v0 = 1, m = 0.75) annotation(Placement(visible = true, transformation(origin = {-37.7299, 30.0}, extent = {{-17.7299, -17.7299}, {17.7299, 17.7299}}, rotation = 0)));
+  XogenyModels.Components.SolenoidSystemComponents.CarWithConnector c(x0 = 0, v0 = 0, m = 0.75) annotation(Placement(visible = true, transformation(origin = {-37.7299, 30.0}, extent = {{-17.7299, -17.7299}, {17.7299, 17.7299}}, rotation = 0)));
   XogenyModels.Components.SolenoidSystemComponents.SolFWConnector sol1(N = 20, A = 3, mu = 0.5, V = 12.8, R = 2, PWM = 1, Px = 2.0, h = 1) annotation(Placement(visible = true, transformation(origin = {-87.5, 27.5}, extent = {{-22.5, -22.5}, {22.5, 22.5}}, rotation = 0)));
   XogenyModels.Components.SolenoidSystemComponents.SolFWConnector sol2(N = 20, A = 3, mu = 0.5, V = 12.8, R = 2, PWM = 1, Px = 4.0, h = 1) annotation(Placement(visible = true, transformation(origin = {-85.0, -7.7614}, extent = {{-22.2386, -22.2386}, {22.2386, 22.2386}}, rotation = 0)));
   XogenyModels.Components.SolenoidSystemComponents.SolFWConnector sol3(N = 20, A = 3, mu = 0.5, V = 12.8, R = 2, PWM = 1, Px = 6.0, h = 1) annotation(Placement(visible = true, transformation(origin = {-87.5, 65.0}, extent = {{-22.5, -22.5}, {22.5, 22.5}}, rotation = 0)));
@@ -30,4 +30,4 @@ equation
   connect(sensor2.CartMag, c.c) annotation(Line(visible = true, origin = {-9.0867, 55.1027}, points = {{44.1884, 21.5567}, {-7.9133, 21.5567}, {-7.9133, -21.5567}, {-28.3617, -21.5567}}, color = {0, 127, 0}));
   channel.sumSolF = sol1.sol.f + sol2.sol.f + sol3.sol.f;
   annotation(Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})));
-end SimSysTrial;
+end SimSystem;
