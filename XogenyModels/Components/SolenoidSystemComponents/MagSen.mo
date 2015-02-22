@@ -1,7 +1,7 @@
 within XogenyModels.Components.SolenoidSystemComponents;
 
 model MagSen "Senses magnet on cart"
-  MagProperties mag(N = 1, A = 1, chi = 1, mu = 1, h = 1);
+  MagProperties mag(N = 20, A = 3, chi = 6.4, mu = 0.5, h = 1);
   parameter SIunits.Position Px;
   Modelica.Mechanics.Translational.Interfaces.Flange_a CartMag annotation(Placement(visible = true, transformation(origin = {0, 0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0), iconTransformation(origin = {0.5083, -0.5083}, extent = {{-50.5083, -50.5083}, {50.5083, 50.5083}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput V annotation(Placement(visible = true, transformation(origin = {61.9125, 2.1167}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0), iconTransformation(origin = {61.9125, 2.1167}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
