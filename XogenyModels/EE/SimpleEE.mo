@@ -1,4 +1,4 @@
-within XogenyModels.SolenoidSystem;
+within XogenyModels.EE;
 
 model SimpleEE "Tries to use the graphical connectors"
   import XogenyModels.Components.SolenoidSystemComponents;
